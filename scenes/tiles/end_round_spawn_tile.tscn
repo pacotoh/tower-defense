@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg4h72ek0wur"]
+
+[ext_resource type="ArrayMesh" uid="uid://cryb7vstc3d7d" path="res://assets/models/tile_endRoundSpawn.obj" id="1_8bi0v"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ps2x8"]
+data = PackedVector3Array(0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 0.1, 0.5, 0.5, 0.1, -0.5, 0.5, 0.1, 0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0.1, 0.5, 0.5, 0, 0.5, 0.5, 0.1, 0.5, -0.5, 0, 0.5, -0.5, 0.1, 0.5, -0.5, 0.1, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.1, -0.5, -0.5, 0.1, 0.5, 0.5, 0, -0.5, -0.5, 0.1, -0.5, -0.5, 0, -0.5, -0.5, 0.1, -0.5, 0.5, 0, -0.5, 0.5, 0.1, -0.5, 0.5, 0.2, 0.5, -0.5, 0.2, -0.5, 0.5, 0.2, -0.5, -0.5, 0.2, -0.5, 0.5, 0.2, 0.5, -0.5, 0.2, 0.5, 0.5, 0.1, -0.5, 0.5, 0.2, 0.5, 0.5, 0.2, -0.5, 0.5, 0.2, 0.5, 0.5, 0.1, -0.5, 0.5, 0.1, 0.5, 0.5, 0.1, -0.5, -0.5, 0.2, -0.5, -0.5, 0.1, -0.5, -0.5, 0.2, -0.5, 0.5, 0.1, -0.5, 0.5, 0.2, -0.5, -0.5, 0.2, -0.5, -0.5, 0.1, 0.5, -0.5, 0.1, -0.5, -0.5, 0.1, 0.5, -0.5, 0.2, -0.5, -0.5, 0.2, 0.5, -0.5, 0.1, 0.5, 0.5, 0.2, 0.5, 0.5, 0.1, 0.5, 0.5, 0.2, 0.5, -0.5, 0.1, 0.5, -0.5, 0.2, 0.5)
+
+[node name="EndRoundSpawnTile" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConcavePolygonShape3D_ps2x8")
+
+[node name="Tile" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_8bi0v")
