@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dif3ab7wbgrwt"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_jbci5"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_6txiv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_513vv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ryey2"]
+size = Vector3(1.36948, 1.24268, 1.2597)
+
+[node name="Bullet" type="CharacterBody3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+script = ExtResource("1_jbci5")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_6txiv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_513vv")
+
+[node name="Collision" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0042572, 0, -0.0157166)
+shape = SubResource("BoxShape3D_ryey2")
+
+[connection signal="body_entered" from="Collision" to="." method="_on_collision_body_entered"]
