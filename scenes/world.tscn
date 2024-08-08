@@ -1,56 +1,175 @@
-[gd_scene load_steps=5 format=3 uid="uid://6uwq71e3ur6w"]
+[gd_scene load_steps=6 format=3 uid="uid://6uwq71e3ur6w"]
 
 [ext_resource type="PackedScene" uid="uid://dg4h72ek0wur" path="res://scenes/tiles/end_round_spawn_tile.tscn" id="1_3r75h"]
 [ext_resource type="PackedScene" uid="uid://hjxgnhmi8bd" path="res://scenes/tiles/straight_tile.tscn" id="2_ds30t"]
 [ext_resource type="PackedScene" uid="uid://j1stoirbnsl6" path="res://scenes/tiles/corner_square_tile.tscn" id="3_khx01"]
 [ext_resource type="PackedScene" uid="uid://7pgk5itma28o" path="res://scenes/tiles/end_tile.tscn" id="4_vaca3"]
+[ext_resource type="PackedScene" uid="uid://cpjouyq5ulpb6" path="res://scenes/tiles/grass_tile.tscn" id="5_fvqit"]
 
 [node name="World" type="Node3D"]
 
-[node name="SpawnTile" parent="." instance=ExtResource("1_3r75h")]
+[node name="PathTiles" type="Node" parent="."]
+
+[node name="SpawnTile" parent="PathTiles" instance=ExtResource("1_3r75h")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, -4.5)
 
-[node name="StraightTile1" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile1" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, -4.5)
 
-[node name="StraightTile2" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile2" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -3.5)
 
-[node name="StraightTile3" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile3" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -2.5)
 
-[node name="StraightTile4" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile4" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, -1.5)
 
-[node name="StraightTile5" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile5" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0, -1.5)
 
-[node name="StraightTile6" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile6" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, -1.5)
 
-[node name="StraightTile7" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile7" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.5, 0, -1.5)
 
-[node name="StraightTile8" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile8" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -2.5)
 
-[node name="StraightTile9" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile9" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -3.5)
 
-[node name="StraightTile10" parent="." instance=ExtResource("2_ds30t")]
+[node name="StraightTile10" parent="PathTiles" instance=ExtResource("2_ds30t")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.5, 0, -4.5)
 
-[node name="CornerSquareTile1" parent="." instance=ExtResource("3_khx01")]
+[node name="CornerSquareTile1" parent="PathTiles" instance=ExtResource("3_khx01")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.5, 0, -4.5)
 
-[node name="CornerSquareTile2" parent="." instance=ExtResource("3_khx01")]
+[node name="CornerSquareTile2" parent="PathTiles" instance=ExtResource("3_khx01")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, -1.5)
 
-[node name="CornerSquareTile3" parent="." instance=ExtResource("3_khx01")]
+[node name="CornerSquareTile3" parent="PathTiles" instance=ExtResource("3_khx01")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.5, 0, -1.5)
 
-[node name="CornerSquareTile4" parent="." instance=ExtResource("3_khx01")]
+[node name="CornerSquareTile4" parent="PathTiles" instance=ExtResource("3_khx01")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 5.5, 0, -4.5)
 
-[node name="EndTile" parent="." instance=ExtResource("4_vaca3")]
+[node name="EndTile" parent="PathTiles" instance=ExtResource("4_vaca3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0, -4.5)
+
+[node name="GrassTiles" type="Node" parent="."]
+
+[node name="GrassTile" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -3.5)
+
+[node name="GrassTile2" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -3.5)
+
+[node name="GrassTile3" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -4.5)
+
+[node name="GrassTile4" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -5.5)
+
+[node name="GrassTile5" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -5.5)
+
+[node name="GrassTile6" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -5.5)
+
+[node name="GrassTile7" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -5.5)
+
+[node name="GrassTile8" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -5.5)
+
+[node name="GrassTile9" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -4.5)
+
+[node name="GrassTile10" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3.5)
+
+[node name="GrassTile11" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -2.5)
+
+[node name="GrassTile12" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
+
+[node name="GrassTile13" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.5)
+
+[node name="GrassTile14" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -2.5)
+
+[node name="GrassTile15" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3.5)
+
+[node name="GrassTile16" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -4.5)
+
+[node name="GrassTile17" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -5.5)
+
+[node name="GrassTile18" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -5.5)
+
+[node name="GrassTile19" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -5.5)
+
+[node name="GrassTile20" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -5.5)
+
+[node name="GrassTile21" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -5.5)
+
+[node name="GrassTile22" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -4.5)
+
+[node name="GrassTile23" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -3.5)
+
+[node name="GrassTile24" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -3.5)
+
+[node name="GrassTile25" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -3.5)
+
+[node name="GrassTile26" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -2.5)
+
+[node name="GrassTile27" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -1.5)
+
+[node name="GrassTile28" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, -0.5)
+
+[node name="GrassTile29" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -0.5)
+
+[node name="GrassTile30" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -0.5)
+
+[node name="GrassTile31" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
+
+[node name="GrassTile32" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
+
+[node name="GrassTile33" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+
+[node name="GrassTile34" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="GrassTile35" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="GrassTile36" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1.5)
+
+[node name="GrassTile37" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -2.5)
+
+[node name="GrassTile38" parent="GrassTiles" instance=ExtResource("5_fvqit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -3.5)
