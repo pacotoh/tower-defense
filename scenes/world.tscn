@@ -1,12 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://6uwq71e3ur6w"]
+[gd_scene load_steps=8 format=3 uid="uid://6uwq71e3ur6w"]
 
 [ext_resource type="PackedScene" uid="uid://dg4h72ek0wur" path="res://scenes/tiles/end_round_spawn_tile.tscn" id="1_3r75h"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_370mp"]
 [ext_resource type="PackedScene" uid="uid://hjxgnhmi8bd" path="res://scenes/tiles/straight_tile.tscn" id="2_ds30t"]
 [ext_resource type="PackedScene" uid="uid://j1stoirbnsl6" path="res://scenes/tiles/corner_square_tile.tscn" id="3_khx01"]
 [ext_resource type="PackedScene" uid="uid://7pgk5itma28o" path="res://scenes/tiles/end_tile.tscn" id="4_vaca3"]
 [ext_resource type="PackedScene" uid="uid://cpjouyq5ulpb6" path="res://scenes/tiles/grass_tile.tscn" id="5_fvqit"]
 
+[sub_resource type="Curve3D" id="Curve3D_hsi3g"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.5, 0.2, -4.5, 0, 0, 0, 0, 0, 0, 0.5, 0.2, -4.5, 0, 0, 0, 0, 0, 0, 0.5, 0.2, -1.5, 0, 0, 0, 0, 0, 0, 5.5, 0.2, -1.5, 0, 0, 0, 0, 0, 0, 5.5, 0.2, -4.5, 0, 0, 0, 0, 0, 0, 7.5, 0.2, -4.5),
+"tilts": PackedFloat32Array(0, 0, 0, 0, -0.0769991, 0)
+}
+point_count = 6
+
 [node name="World" type="Node3D"]
+script = ExtResource("1_370mp")
 
 [node name="PathTiles" type="Node" parent="."]
 
@@ -173,3 +182,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -2.5)
 
 [node name="GrassTile38" parent="GrassTiles" instance=ExtResource("5_fvqit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -3.5)
+
+[node name="Path" type="Path3D" parent="."]
+curve = SubResource("Curve3D_hsi3g")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 3, 5, 3)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.134972, 0.990849, 0, -0.990849, 0.134972, 3.55068, 8.70114, -2.21765)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
