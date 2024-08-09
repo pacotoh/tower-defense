@@ -5,6 +5,7 @@ var bullet_damage: int = 5
 var current_targets: Array = []
 var current: CharacterBody3D
 var can_shoot: bool = true
+const SMOOTH_SPEED: float = .05
 
 
 # Called when the node enters the scene tree for the first time.
@@ -46,14 +47,12 @@ func _on_mob_detector_body_entered(body):
 	if body.is_in_group("Enemy"):
 		current_targets.append(body)
 		choose_target(current_targets)
-		print("ENTERED: ", current)
 
 
 func _on_mob_detector_body_exited(body):
 	if body.is_in_group("Enemy"):
 		current_targets.erase(body)
 		choose_target(current_targets)
-		print("EXITED: ", current)
 
 
 func _on_shooting_cooldown_timeout():

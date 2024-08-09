@@ -7,12 +7,19 @@ extends CharacterBody3D
 
 func _physics_process(delta: float):
 	path.set_progress(path.get_progress() + speed * delta)
-	
-	if path.get_progress_ratio() >= 1:
-		path.queue_free()
+	if path.get_progress_ratio() >= 0.99:
+		Global.health -= 20
+		death()
 		
+
 func take_damage(damage: int) -> void:
 	health -= damage
 	
 	if health <= 0:
-		queue_free()
+		Global.money += 50
+		death()
+
+
+func death() -> void:
+	Global.enemies_alive -= 1
+	path.queue_free()
