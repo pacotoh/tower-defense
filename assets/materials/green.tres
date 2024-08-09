@@ -1,6 +1,8 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://bmigxqnddinb0"]
 
 [resource]
+transparency = 4
+blend_mode = 1
 albedo_color = Color(0.324013, 0.818116, 0.262751, 1)
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.31

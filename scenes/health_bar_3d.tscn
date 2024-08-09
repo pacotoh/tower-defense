@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0tvxmb64j060"]
+
+[ext_resource type="Texture2D" uid="uid://d15vg1bpsdea6" path="res://icon.svg" id="1_xlip8"]
+[ext_resource type="Script" path="res://scripts/health_bar_3d.gd" id="2_d0yu5"]
+[ext_resource type="PackedScene" uid="uid://djfbalr25din6" path="res://scenes/health_bar_2d.tscn" id="2_giovi"]
+[ext_resource type="Script" path="res://scripts/health_bar_2d.gd" id="3_li1km"]
+
+[node name="HealthBar3D" type="Sprite3D"]
+billboard = 1
+texture = ExtResource("1_xlip8")
+script = ExtResource("2_d0yu5")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(200, 20)
+
+[node name="HealthBar2D" parent="SubViewport" instance=ExtResource("2_giovi")]
+script = ExtResource("3_li1km")
