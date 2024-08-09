@@ -375,6 +375,50 @@ theme_override_font_sizes/font_size = 35
 text = "Wave: 0"
 vertical_alignment = 1
 
+[node name="GameOverPanel" type="Panel" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer/UI/GameOverPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.5
+offset_top = -114.0
+offset_right = 272.5
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+
+[node name="PlayAgainButton" type="Button" parent="CanvasLayer/UI/GameOverPanel"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 0
+offset_left = 500.0
+offset_top = 450.0
+offset_right = 700.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 25
+text = "Play Again"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/UI/GameOverPanel"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = 500.0
+offset_top = 520.0
+offset_right = 700.0
+offset_bottom = 570.0
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
 [node name="TowerRoundSampleF" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -4.5)
 mesh = ExtResource("10_lpy05")
@@ -386,3 +430,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78934, 0)
 [connection signal="pressed" from="CanvasLayer/UI/ShopPanel/VBoxContainer/CannonButton" to="." method="_on_cannon_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/ShopPanel/VBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/UI/NextWaveButton" to="." method="_on_next_wave_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/GameOverPanel/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/UI/GameOverPanel/QuitButton" to="." method="_on_quit_button_pressed"]

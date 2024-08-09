@@ -50,6 +50,9 @@ func handle_player_controls() -> void:
 
 
 func game_manager() -> void:
+	if Global.health <= 0:
+		game_over()
+	
 	if enemies_to_spawn > 0 and can_spawn:
 		$SpawnTimer.start()
 		var temp_enemy = enemy.instantiate()
@@ -67,7 +70,10 @@ func handle_ui() -> void:
 	$CanvasLayer/UI/NextWaveButton.visible = not wave_on_going
 	$CanvasLayer/UI/Gold.text = "Gold: " + str(Global.money)
 	$CanvasLayer/UI/Wave.text = "Wave: " + str(Global.wave)
-	
+
+
+func game_over() -> void:
+	$CanvasLayer/UI/GameOverPanel.visible = true
 
 
 func _on_spawn_timer_timeout():
@@ -95,3 +101,12 @@ func _on_next_wave_button_pressed():
 	Global.wave += 1
 	enemies_to_spawn = Global.wave * 3
 	can_spawn = true
+
+
+func _on_play_again_button_pressed():
+	Global.reset()
+	get_tree().reload_current_scene()
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()
