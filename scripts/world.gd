@@ -6,6 +6,9 @@ extends Node3D
 @onready var indicator: MeshInstance3D = $Indicator
 @export var env_color: Color
 
+@onready var green_indicator: Material = load("res://assets/materials/green.tres")
+@onready var red_indicator: Material = load("res://assets/materials/red.tres")
+
 var enemies_to_spawn: int = 3
 var can_spawn: bool = true
 
@@ -33,14 +36,14 @@ func handle_player_controls() -> void:
 		var collider: CollisionObject3D = ray_result.get("collider")
 		indicator.global_position = collider.global_position + Vector3(0, 0.2, 0)
 		if collider.is_in_group("Empty"):
-			indicator.set_surface_override_material(0, load("res://assets/materials/green.tres"))
+			indicator.set_surface_override_material(0, green_indicator)
 			if Input.is_action_just_pressed("left_click"):
 				# cannon instance
 				var temp_cannon: StaticBody3D = cannon.instantiate()
 				add_child(temp_cannon)
 				temp_cannon.global_position = indicator.global_position
 		else:
-			indicator.set_surface_override_material(0, load("res://assets/materials/red.tres"))
+			indicator.set_surface_override_material(0, red_indicator)
 	else:
 		indicator.visible = false
 
